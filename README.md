@@ -1,4 +1,4 @@
 duplo
 =====
 
-Everybody loves Duplos
+Everybody loves Duplo
