@@ -20,16 +20,17 @@ html(
 ### Templates
 ```perl
 sub template {
+  my $title = shift;
   html(
     head(
-      title('Example using template')),
+      title($title)),
     body(
       @_,
       div({class => 'footer'},
         p("That's all folks!"))))
 }
 
-template(
+template('Template example',
   h1('Hello, World!'),
   div(
     h2('Oh hai!')));
