@@ -14,6 +14,7 @@ html(
     div({class => 'container', style => 'border: 1px black solid;'},
       ul({style => 'list-style-type: circle;'},
         map { li 'Number is: ', $_ } 1 .. 5),
+      img({src => 'image.jpg', alt => 'An image'}),
       p("That's all folks!"))));
 ```
 
