@@ -52,7 +52,7 @@ sub template {
       title('Example using template')),
     body(
       @_,
-      (p "That's all folks!")))
+      p("That's all folks!")))
 }
 
 template(
