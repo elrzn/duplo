@@ -1,10 +1,10 @@
-duplo
-=====
+# duplo
 
 Duplo generates HTML.
 
-Examples
---------
+## Examples
+
+### Whirlwind
 
 ```perl
 html(
@@ -18,7 +18,7 @@ html(
       p("That's all folks!"))));
 ```
 
-Using templates:
+### Templates
 
 ```perl
 sub template {
