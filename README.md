@@ -5,7 +5,6 @@ Duplo generates HTML.
 ## Examples
 
 ### Whirlwind
-
 ```perl
 html(
   head(
@@ -19,7 +18,6 @@ html(
 ```
 
 ### Templates
-
 ```perl
 sub template {
   html(
