@@ -15,7 +15,7 @@ html(
     div({class => 'container', style => 'border: 1px black solid;'},
       ul({style => 'list-style-type: circle;'},
         map { li 'Number is: ', $_ } 1 .. 5),
-      p("That's all folks!"))))
+      p("That's all folks!"))));
 ```
 
 Using templates:
@@ -35,5 +35,5 @@ sub template {
 template(
   h1('Hello, World!'),
   div(
-    h2('Oh hai!')))
+    h2('Oh hai!')));
 ```
