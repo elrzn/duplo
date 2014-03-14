@@ -29,7 +29,6 @@ sub template {
       @_,
       div({class => 'footer'},
         p("That's all folks!"))))
-      }
 }
 
 template(
