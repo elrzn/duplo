@@ -10,23 +10,19 @@ BEGIN {
   @HTML_TAGS = qw(
     body
     div
-    h1 h2 h3 h4 h5 h6
-    head
-    html
+    h1 h2 h3 h4 h5 h6 head html
+    li
     p
     title
-    ul li
+    ul
   );
   @HTML_TAGS_SINGLE = qw(
     area
-    base
-    br
-    col
-    command
+    base br
+    col command
     embed
     hr
-    img
-    input
+    img input
     keygen
     link
     meta
@@ -37,8 +33,7 @@ BEGIN {
   );
 }
 
-use Exporter::Tidy default => [@HTML_TAGS,
-                               @HTML_TAGS_SINGLE];
+use Exporter::Tidy default => [@HTML_TAGS, @HTML_TAGS_SINGLE];
 
 sub _with_name {
   my $treatment = shift;
