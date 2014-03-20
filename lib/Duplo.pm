@@ -47,7 +47,14 @@ sub _with_name {
   "<$name@p>" . join('', @_) . ($treatment eq ':normal' ? "</$name>" : q{});
 }
 
-eval "sub $_ { _with_name ':normal', '$_', \@_ }" for map { _ $_ } @HTML_TAGS;
-eval "sub $_ { _with_name ':single', '$_', \@_ }" for map { _ $_ } @HTML_TAGS_SINGLE;
+do {
+  ## Build subroutines.
+  sub _builder {
+    my ($sub_name, $type) = @_;
+    "sub $sub_name { _with_name '$type', '$sub_name', \@_ }";
+  }
+  eval _builder $_, q(:normal) for map { _ $_ } @HTML_TAGS;
+  eval _builder $_, q(:single) for map { _ $_ } @HTML_TAGS_SINGLE;
+};
 
 1;
