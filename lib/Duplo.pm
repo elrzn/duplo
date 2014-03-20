@@ -1,7 +1,6 @@
 package Duplo;
 use strict;
 use warnings;
-use subs 'link';
 
 my @HTML_TAGS;
 my @HTML_TAGS_SINGLE;
