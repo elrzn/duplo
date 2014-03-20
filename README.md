@@ -21,7 +21,7 @@ html_(
 ### Templates
 ```perl
 sub template {
-  my $title_ = shift;
+  my $title = shift;
   html_(
     head_(
       title_($title_)),
