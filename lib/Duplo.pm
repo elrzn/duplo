@@ -51,7 +51,7 @@ do {
   ## Build subroutines.
   sub _builder {
     my ($sub_name, $type) = @_;
-    "sub $sub_name { _with_name '$type', '$sub_name', \@_ }";
+    qq(sub $sub_name { _with_name '$type', '$sub_name', \@_ });
   }
   eval _builder $_, q(:normal) for map { _ $_ } @HTML_TAGS;
   eval _builder $_, q(:single) for map { _ $_ } @HTML_TAGS_SINGLE;
