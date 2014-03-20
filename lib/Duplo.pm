@@ -31,13 +31,15 @@ BEGIN {
     track
     wbr
   );
+
+  sub _ { $_[0] . '_' }
 }
 
-use Exporter::Tidy default => [@HTML_TAGS, @HTML_TAGS_SINGLE];
+use Exporter::Tidy default => [map { _ $_ } @HTML_TAGS, @HTML_TAGS_SINGLE];
 
 sub _with_name {
   my $treatment = shift;
-  my $name = shift;
+  my $name = substr shift, 0, -1;
   my @p;
   if (@_ && ref $_[0] eq 'HASH') {
     my $h = shift;
@@ -46,7 +48,7 @@ sub _with_name {
   "<$name@p>" . join('', @_) . ($treatment eq ':normal' ? "</$name>" : q{});
 }
 
-eval "sub $_ { _with_name ':normal', '$_', \@_ }" for @HTML_TAGS;
-eval "sub $_ { _with_name ':single', '$_', \@_ }" for @HTML_TAGS_SINGLE;
+eval "sub $_ { _with_name ':normal', '$_', \@_ }" for map { _ $_ } @HTML_TAGS;
+eval "sub $_ { _with_name ':single', '$_', \@_ }" for map { _ $_ } @HTML_TAGS_SINGLE;
 
 1;
